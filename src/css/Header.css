@@ -1,0 +1,37 @@
+.contenedor {
+    display: flex;      /* Flexbox para limitar la zona de clic*/
+    justify-content: center; /* Alinear al centro*/
+    align-items: center;       /* Alinear al centro*/
+    margin-top: 30px;       
+}
+.header {
+    text-decoration: none;      /* Quitar el hipervinculo*/
+    cursor: default;            /* Quitar la forma de manito al cursor*/
+    color: rgb(0, 0, 0);
+    display: inline-block;      
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+#logo {
+    width: 40px;
+    margin-right: 10px;
+}
+@font-face {        /* Agregar fuente*/
+    font-family: 'Spotify';
+    src: url('../font/Gotham-Spotify-Font/GothamMedium_1.ttf');
+}
+#nombre-logo {
+    display: inline-block;
+    font-size: 18pt;
+    font-family: 'Spotify';
+}
+#marcaRegis {
+    display: inline-block;
+    vertical-align: top;        /*Alinear el elemento al tope*/
+    line-height: 4; /* Ajustar el alto del elemento*/
+    font-size: 4pt;
+    margin-left: 1px; 
+}
+
