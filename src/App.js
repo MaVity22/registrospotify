@@ -9,8 +9,14 @@ function App() {
     <div className="Register">
       <Header link={pagPrincipal}></Header>
       <OtrSing></OtrSing>
-      <hr>
-      </hr>
+      <div className='separador'>
+        <hr className='divisor'>
+        </hr>
+        o
+        <hr className='divisor'>
+        </hr>
+      </div>
+      
     </div>
   );
 }

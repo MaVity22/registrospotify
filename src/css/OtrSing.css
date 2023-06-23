@@ -8,7 +8,7 @@
     align-items: center;       /* Alinear al centro*/
     flex-direction: column;     /* Ubica a los siguientes elementos debajo*/
     font-family: 'Spotify';
-    letter-spacing: -0.04em; 
+    letter-spacing: -0.0em; 
 }
 .btn-regis {
     text-decoration: none;      /* Quitar el hipervinculo*/
