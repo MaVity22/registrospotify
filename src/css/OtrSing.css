@@ -1,0 +1,58 @@
+@font-face {        /* Agregar fuente*/
+    font-family: 'Spotify';
+    src: url('../font/Gotham-Spotify-Font/Gotham-Bold.otf');
+}
+.cont-otros {
+    display: flex;      /* Flexbox para limitar la zona de clic*/
+    justify-content: center; /* Alinear al centro*/
+    align-items: center;       /* Alinear al centro*/
+    flex-direction: column;     /* Ubica a los siguientes elementos debajo*/
+    font-family: 'Spotify';
+    letter-spacing: -0.04em; 
+}
+.btn-regis {
+    text-decoration: none;      /* Quitar el hipervinculo*/
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    transition: transform 0.05s; /* Tiempo de la transición de la escala */
+}
+/*Animacion de los botonos al pasar el cursor*/
+.btn-regis:hover {
+    transform: scale(1.02); /* Escala el botón al 102% de su tamaño original */
+}
+
+.facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(64,90,147);
+    border-radius: 500px;
+    width: 400px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-bottom: 22px;
+    
+}
+.google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 500px;
+    width: 400px;
+    color: rgb(83,83,83);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 2px solid;
+    border-color: rgb(83,83,83);
+    margin-bottom: 22px;
+}
+.logo {
+    height: 22px;
+    margin-right: 20px;
+}
+.txt-reg {
+    font-size: 11pt;
+    font-weight: 200;
+}

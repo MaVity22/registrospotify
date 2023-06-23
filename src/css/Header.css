@@ -2,7 +2,11 @@
     display: flex;      /* Flexbox para limitar la zona de clic*/
     justify-content: center; /* Alinear al centro*/
     align-items: center;       /* Alinear al centro*/
-    margin-top: 30px;       
+    flex-direction: column;     /* Ubica a los siguientes elementos debajo*/
+    margin-top: 40px;
+    font-family: 'Spotify';
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;       
 }
 .header {
     text-decoration: none;      /* Quitar el hipervinculo*/
@@ -16,7 +20,7 @@
 }
 #logo {
     width: 40px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 @font-face {        /* Agregar fuente*/
     font-family: 'Spotify';
@@ -25,7 +29,7 @@
 #nombre-logo {
     display: inline-block;
     font-size: 18pt;
-    font-family: 'Spotify';
+    
 }
 #marcaRegis {
     display: inline-block;
@@ -33,5 +37,10 @@
     line-height: 4; /* Ajustar el alto del elemento*/
     font-size: 4pt;
     margin-left: 1px; 
+}
+#regis-label {
+    margin: 0%;
+    margin-top: 40px;
+    font-size: 20pt;
 }
 

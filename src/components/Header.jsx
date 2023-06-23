@@ -14,9 +14,11 @@ const Header = ({ link}) => {
                     </h1>
                 </div>
             </a>
+            <h2 id='regis-label'>
+                Regístrate gratis para escuchar.
+            </h2>
         </div>
-        
-        
+
         );
 }
 export default Header;
