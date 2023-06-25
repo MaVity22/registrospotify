@@ -5,6 +5,9 @@ import { useState } from 'react';
 import LogoError from '../img/Error.png'
 import '../css/Form.css'
 // Probando carga a GitHUb
+// Icono del ojo para las contraseñas
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const Form = (props) => {
 
     const { state, setState } = props;
@@ -14,6 +17,14 @@ const Form = (props) => {
     const [eDay, seteDay] = useState("");
     const [eMonth, seteMonth] = useState("");
     const [eYear, seteYear] = useState("");
+
+    // Contrasñea visible
+    const [showPassword, setShowPassword] = useState(false);
+
+    const PasswordVisibility = (e) => {
+        e.preventDefault();
+        setShowPassword(!showPassword);
+      };
 
     const handlerEmail = (e) => {
         const entrada = e.target.value;
@@ -48,33 +59,29 @@ const Form = (props) => {
 
             seteNick('Indica un nombre para tu perfil.');
         } else {
-            setePasswd("");
             seteNick("");
         }
     }
 
     const handlerDay = (e) => {
-        const entrada = e.target.value;
+        const entrada = e.target.value ;
         setState({ ...state, day: entrada });
-        if (entrada >= '1' || entrada <= '31') {
-            setePasswd("");
+        if (entrada >= 1 && entrada < 32) {
             seteDay('');
         }
         else {
-
             seteDay("Indica un día válido del mes.");
+            
         }
     }
 
     const handlerMonth = (e) => {
         const entrada = e.target.value;
         setState({ ...state, month: entrada });
-        if (entrada === "Mes") {
-
+        if (entrada.trim().length === 0) {
             seteMonth('Selecciona tu mes de nacimiento.');
         }
         else {
-            setePasswd("");
             seteMonth("");
         }
     }
@@ -83,11 +90,9 @@ const Form = (props) => {
         const entrada = e.target.value;
         setState({ ...state, year: entrada });
         if (entrada >= 1900) {
-            setePasswd("");
             seteYear('');
         }
         else {
-
             seteYear("Indica un año válido.");
         }
     }
@@ -100,7 +105,7 @@ const Form = (props) => {
                 {eEmail && (
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
-                        <p style={{ color: 'red' }}> {eEmail}</p>
+                        <p className='error' > {eEmail}</p>
                     </div>
                 )
                 }
@@ -109,11 +114,12 @@ const Form = (props) => {
             </div>
             <div className="input">
                 <label htmlFor="password">Crea una contraseña</label>
-                <input type="password" name="password" size={30} onBlur={handlerPasswd} onChange={handlerPasswd} placeholder="Crea una contraseña." />
+                <input type={showPassword ? 'text' : 'password'} name="password" onBlur={handlerPasswd} onChange={handlerPasswd} placeholder="Crea una contraseña." />
+                <FontAwesomeIcon id='btn-Ojo' onClick={PasswordVisibility} icon={showPassword ? faEyeSlash : faEye} />
                 {ePasswd && (
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
-                        <p style={{ color: 'red' }}> {ePasswd}</p>
+                        <p className='error' > {ePasswd}</p>
                     </div>
                 )
                 }
@@ -124,7 +130,7 @@ const Form = (props) => {
                 {eNick && (
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
-                        <p style={{ color: 'red' }}> {eNick}</p>
+                        <p className='error' > {eNick}</p>
                     </div>
                 )
                 }
@@ -135,11 +141,11 @@ const Form = (props) => {
                 <div className='cont-fecha'>
                     <div className="input-day">
                         <p className='subTit-Fec'>Día</p>
-                        <input type="text" name="day" size={5} onChange={handlerDay} placeholder="DD" />
+                        <input type="text" name="day" maxLength={2} onBlur={handlerDay} onChange={handlerDay} placeholder="DD" />
                     </div>
                     <div className="input-month">
                         <p className='subTit-Fec'>Mes</p>
-                        <select name="month" value={state.day} onChange={handlerMonth}>
+                        <select name="month"  onBlur={handlerMonth} onChange={handlerMonth}>
                             <option value='' selected disabled>Mes</option>
                             <option value="01">Enero</option>
                             <option value="02">Febrero</option>
@@ -157,42 +163,49 @@ const Form = (props) => {
                     </div>
                     <div className="input-year">
                         <p className='subTit-Fec'>Año</p>
-                        <input type="text" name="year" size={5} onChange={handlerYear} placeholder="AAAA" />
+                        <input type="text" name="year" maxLength={4} onBlur={handlerYear} onChange={handlerYear} placeholder="AAAA" />
                     </div>
                 </div>
-                <div className='errores'>
-                    {
-                        <p style={{ color: 'red' }}> {eDay}</p>
-                    }
-                    {
-                        <p style={{ color: 'red' }}> {eMonth}</p>
-                    }
-                    {
-                        <p style={{ color: 'red' }}> {eYear}</p>
-                    }
-                </div>
+                {eDay &&
+                    <div className='Error-msg'>
+                        <img className="icon" src={LogoError} alt='error'></img>
+                        <p className='error' > {eDay}</p> 
+                    </div>
+                }
+                {eMonth &&
+                    <div className='Error-msg'>
+                        <img className="icon" src={LogoError} alt='error'></img>
+                        <p className='error' > {eMonth}</p> 
+                    </div>
+                }
+                {eYear &&
+                    <div className='Error-msg'>
+                        <img className="icon" src={LogoError} alt='error'></img>
+                        <p className='error' > {eYear}</p> 
+                    </div>
+                }
             </div>
             <div className="input">
                 <label htmlFor="genero">¿Cuál es tu género?</label>
                 <div className='opciones'>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-hombre"  className='radio'/>
+                        <input type="radio" id="genero-hombre"  className='radio' name='radio'/>
                         <label className="label-gener">Hombre</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-mujer"  className='radio'/>
+                        <input type="radio" id="genero-mujer"  className='radio' name='radio'/>
                         <label className="label-gener">Mujer</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-nBinario"  className='radio'/>
+                        <input type="radio" id="genero-nBinario"  className='radio' name='radio'/>
                         <label className="label-gener">No binario</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-otro"  className='radio'/>
+                        <input type="radio" id="genero-otro"  className='radio' name='radio'/>
                         <label className="label-gener">Otro</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-no"  className='radio'/>
+                        <input type="radio" id="genero-no"  className='radio' name='radio'/>
                         <label className="label-gener">Prefiero no responder</label>
                     </div>
                 </div>
