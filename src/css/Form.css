@@ -67,6 +67,7 @@ select[name="month"] {
     border-radius: 4px;
     border-width: 0.5px;
     width: 200px;
+    color: rgb(95, 83, 83);
 }
 .subTit-Fec {
     font-family: 'SpotifySubT';
@@ -89,6 +90,13 @@ select[name="month"] {
     align-items: center;
     justify-content: space-between;
 }
+.label-gener {
+    font-family: 'SpotifySubT';
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    vertical-align: middle;
+    padding: 0px 24px 0px 12px;
+}
 .opciones {
     display: flex;
     flex-wrap: wrap;    /* Hace que se coloquen debajo los elementos que no alcanzan en la misma linea */
@@ -97,8 +105,73 @@ select[name="month"] {
 .op-genero {
     display: flex;
     align-items: center;
+    height: 30px;
 }
 .radio {
+    margin: 0%;
     width: 15px;
     height: 15px;
+}
+.input-Ck {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 450px;
+    padding-bottom: 24px;
+}
+#Op2{
+    align-items: flex-start;
+}
+#label-Op1, #label-Op2 {
+    font-family: 'SpotifySubT';
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    vertical-align: middle;
+    padding: 0px 24px 0px 12px;
+}
+#label-Op2 {
+    width: 380px;
+
+    line-height: 1.7; /* Ajusta el valor según el espaciado deseado */
+}
+.ck-box {
+    margin: 0px;
+    width: 15px;
+    height: 15px;
+}
+#Term-Con, .login {
+    font-family: 'SpotifySubT';
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 10.5pt;
+}
+#Term-Con {
+    font-size: 7.5pt;
+}
+.term {
+    padding-bottom: 14px;
+}
+.text-term {
+    margin: 0px;
+}
+.link-term {
+    color: rgb(29,185,84);
+}
+input[type='submit'] {
+    background-color: rgb(30,215,96);
+    height: 56px;
+    width: 181px;
+    border: 0px;
+    border-radius: 500px;
+    font-family: 'Spotify';
+    font-size: 13pt;
+    margin-bottom: 10px;
+    transition: transform 0.05s; /* Tiempo de la transición de la escala */
+    cursor: pointer;
+}
+/*Animacion de los botonos al pasar el cursor*/
+input[type='submit']:hover {
+    transform: scale(1.05); /* Escala el botón al 102% de su tamaño original */
 }

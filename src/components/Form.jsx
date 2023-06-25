@@ -160,7 +160,6 @@ const Form = (props) => {
                         <input type="text" name="year" size={5} onChange={handlerYear} placeholder="AAAA" />
                     </div>
                 </div>
-
                 <div className='errores'>
                     {
                         <p style={{ color: 'red' }}> {eDay}</p>
@@ -178,37 +177,55 @@ const Form = (props) => {
                 <div className='opciones'>
                     <div className='op-genero'>
                         <input type="radio" id="genero-hombre"  className='radio'/>
-                        <label htmlFor="hombre">Hombre</label>
+                        <label className="label-gener">Hombre</label>
                     </div>
                     <div className='op-genero'>
                         <input type="radio" id="genero-mujer"  className='radio'/>
-                        <label htmlFor="mujer">Mujer</label>
+                        <label className="label-gener">Mujer</label>
                     </div>
                     <div className='op-genero'>
                         <input type="radio" id="genero-nBinario"  className='radio'/>
-                        <label htmlFor="nBinario">No Binario</label>
+                        <label className="label-gener">No binario</label>
                     </div>
                     <div className='op-genero'>
                         <input type="radio" id="genero-otro"  className='radio'/>
-                        <label htmlFor="otro">Otro</label>
+                        <label className="label-gener">Otro</label>
                     </div>
                     <div className='op-genero'>
                         <input type="radio" id="genero-no"  className='radio'/>
-                        <label htmlFor="no">Prefiero no responder</label>
+                        <label className="label-gener">Prefiero no responder</label>
                     </div>
                 </div>
             </div>
-            <div className='input'>
-                <div className='opcion1'>
-                    <input type="checkbox" id="op1" />
-                    <label htmlFor="op1">No quiero recibir mensajes de marketing de Spotify</label>
+            <div className='input-Ck' >
+                <input type="checkbox" className='ck-box'/>
+                <label id='label-Op1'>No quiero recibir mensajes de marketing de Spotify</label>
+            </div>
+            <div className='input-Ck' id='Op2'>
+                <input type="checkbox" className='ck-box'/>
+                <label id='label-Op2'>Compartir mis datos de registro con los proveedores de 
+                contenidos de Spotify para fines de marketing.</label>
+            </div>
+            <div className='input' id='Term-Con'>
+                <div className='term'>
+                    <p className='text-term'>
+                        Al hacer clic en Registrarte, aceptas
+                        los <a className='link-term' href='https://www.spotify.com/ec/legal/end-user-agreement/'>Términos y condiciones 
+                        de uso</a> de Spotify.
+                    </p>
                 </div>
-                <div className='opcion2'>
-                    <input type="checkbox" id="op2" />
-                    <label htmlFor="op2">Compartir mis datos de registro con los proveedores de contenidos de Spotify para fines de marketing.</label>
+                <div className='term'>
+                    <p className='text-term'>
+                        Para obtener más información acerca de cómo Spotify recopila, utiliza, comparte y 
+                        protege tus datos personales, consulta 
+                        la <a className='link-term' href='https://www.spotify.com/ec/legal/end-user-agreement/'>Política de privacidad</a> de Spotify.
+                    </p>
                 </div>
             </div>
             <input type="submit" value="Regístrate" />
+            <p className='login'>
+                ¿Ya tienes cuenta? <a className='link-term' href="https://accounts.spotify.com/es-ES/login?creation_point=https%3A%2F%2Fwww.spotify.com%2Fec%2Fsignup&continue=https%3A%2F%2Fopen.spotify.com%2F%3Fflow_id%3D4e867cf4-3c5e-41e0-960d-9b62ea0a3278%253A1687672180&flow_id=4e867cf4-3c5e-41e0-960d-9b62ea0a3278%3A1687672180&_gl=1*b6ir3x*_gcl_au*NzcxMzQ3NzcwLjE2ODczMjE5NTA.">Inicia sesión</a>.
+            </p>
         </form>
     );
 }
