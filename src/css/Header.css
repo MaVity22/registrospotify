@@ -3,7 +3,7 @@
     justify-content: center; /* Alinear al centro*/
     align-items: center;       /* Alinear al centro*/
     flex-direction: column;     /* Ubica a los siguientes elementos debajo*/
-    margin-top: 45px;
+    padding-top: 45px;
     font-family: 'Spotify';
     letter-spacing: -0.17em;
     margin-bottom: 38px;       

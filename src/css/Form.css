@@ -1,0 +1,104 @@
+@font-face {        /* Agregar fuente*/
+    font-family: 'Spotify';
+    src: url('../font/Gotham-Spotify-Font/Gotham-Bold.otf');
+}
+@font-face {        /* Agregar fuente*/
+    font-family: 'SpotifyErr';
+    src: url('../font/Gotham-Spotify-Font/Gotham-Light.otf');
+}
+@font-face {        /* Agregar fuente*/
+    font-family: 'SpotifySubT';
+    src: url('../font/Gotham-Spotify-Font/Gotham-Light.otf');
+}
+form {
+    font-family: 'Spotify';
+    font-size: 9.5pt;
+    letter-spacing: -0.0em; 
+    display: flex;      /* Flexbox para limitar la zona de clic*/
+    align-items: center;       /* Alinear al centro*/
+    flex-direction: column;     /* Ubica a los siguientes elementos debajo*/
+    text-align: left;
+}
+.Error-msg {
+    display: flex;
+    align-items: center;
+    font-family: 'SpotifyErr';
+    letter-spacing: -0.01em;  
+    margin-bottom: 0%;
+}
+.icon {
+    height: 20px;
+    margin-right: 5px;
+}
+#telef {
+    font-family: 'SpotifyErr';
+    margin: 0px;
+    padding-top: 8px;
+    letter-spacing: -0.02em; 
+    font-size: 9.5pt;
+    font-weight: 600;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    padding-bottom: 28px;
+}
+label {
+    padding: 0px 0px 12px 0px;
+}
+input[type="text"], input[type="password"]{
+    height: 30px;
+    font-size: 11pt;
+    padding: 8px 48px 8px 14px;
+    border-radius: 4px;
+    border-width: 0.5px;
+}
+input[name='day'] {
+    width: 25px;
+}
+input[name='year'] {
+    width: 50px;
+}
+select[name="month"] {
+    height: 49px;
+    font-size: 11pt;
+    padding: 8px 48px 8px 14px;
+    border-radius: 4px;
+    border-width: 0.5px;
+    width: 200px;
+}
+.subTit-Fec {
+    font-family: 'SpotifySubT';
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0%;
+    padding-bottom: 10px;
+}
+.subTit {
+    font-family: 'SpotifySubT';
+    font-weight: 600;
+    letter-spacing: -0.01em; 
+    margin: 0%;
+    margin-top: 10px;
+    
+}
+.cont-fecha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.opciones {
+    display: flex;
+    flex-wrap: wrap;    /* Hace que se coloquen debajo los elementos que no alcanzan en la misma linea */
+    align-items: center;
+}
+.op-genero {
+    display: flex;
+    align-items: center;
+}
+.radio {
+    width: 15px;
+    height: 15px;
+}
