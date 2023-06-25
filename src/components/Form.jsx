@@ -218,7 +218,7 @@ const Form = (props) => {
                     <p className='text-term'>
                         Para obtener más información acerca de cómo Spotify recopila, utiliza, comparte y 
                         protege tus datos personales, consulta 
-                        la <a className='link-term' href='https://www.spotify.com/ec/legal/end-user-agreement/'>Política de privacidad</a> de Spotify.
+                        la <a className='link-term' href='https://www.spotify.com/ec/legal/privacy-policy/'>Política de privacidad</a> de Spotify.
                     </p>
                 </div>
             </div>
