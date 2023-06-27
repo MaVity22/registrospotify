@@ -115,7 +115,7 @@ const Form = (props) => {
             <div className="input">
                 <label htmlFor="password">Crea una contraseña</label>
                 <input type={showPassword ? 'text' : 'password'} name="password" onBlur={handlerPasswd} onChange={handlerPasswd} placeholder="Crea una contraseña." />
-                <FontAwesomeIcon id='btn-Ojo' onClick={PasswordVisibility} icon={showPassword ? faEyeSlash : faEye} />
+                <FontAwesomeIcon id='btn-Ojo' onClick={PasswordVisibility} icon={showPassword ? faEye : faEyeSlash} />
                 {ePasswd && (
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
