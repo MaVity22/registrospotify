@@ -36,12 +36,15 @@ form {
     height: 20px;
     margin-right: 5px;
 }
+.esconder-passwd {
+    position: absolute;
+    right: 500px;
+    top: 73%;
+    transform: translateY(-50%);
+}
 #btn-Ojo {
     font-size: 20pt;
-    position: absolute;
-    right: 19em;
-    top: 20.2em;
-    /*transform: translateY(-50%); */
+    position: relative;
     background: none;
     border: none;
     cursor: pointer;

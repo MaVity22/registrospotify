@@ -24,7 +24,7 @@ const Form = (props) => {
     const PasswordVisibility = (e) => {
         e.preventDefault();
         setShowPassword(!showPassword);
-      };
+    };
 
     const handlerEmail = (e) => {
         const entrada = e.target.value;
@@ -64,14 +64,14 @@ const Form = (props) => {
     }
 
     const handlerDay = (e) => {
-        const entrada = e.target.value ;
+        const entrada = e.target.value;
         setState({ ...state, day: entrada });
         if (entrada >= 1 && entrada < 32) {
             seteDay('');
         }
         else {
             seteDay("Indica un día válido del mes.");
-            
+
         }
     }
 
@@ -115,7 +115,11 @@ const Form = (props) => {
             <div className="input">
                 <label htmlFor="password">Crea una contraseña</label>
                 <input type={showPassword ? 'text' : 'password'} name="password" onBlur={handlerPasswd} onChange={handlerPasswd} placeholder="Crea una contraseña." />
-                <FontAwesomeIcon id='btn-Ojo' onClick={PasswordVisibility} icon={showPassword ? faEye : faEyeSlash} />
+                {
+                    <div className='esconder-passwd'>
+                        <FontAwesomeIcon id='btn-Ojo' onClick={PasswordVisibility} icon={showPassword ? faEye : faEyeSlash} />
+                    </div>
+                }
                 {ePasswd && (
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
@@ -145,7 +149,7 @@ const Form = (props) => {
                     </div>
                     <div className="input-month">
                         <p className='subTit-Fec'>Mes</p>
-                        <select name="month"  onBlur={handlerMonth} onChange={handlerMonth}>
+                        <select name="month" onBlur={handlerMonth} onChange={handlerMonth}>
                             <option value='' selected disabled>Mes</option>
                             <option value="01">Enero</option>
                             <option value="02">Febrero</option>
@@ -169,19 +173,19 @@ const Form = (props) => {
                 {eDay &&
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
-                        <p className='error' > {eDay}</p> 
+                        <p className='error' > {eDay}</p>
                     </div>
                 }
                 {eMonth &&
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
-                        <p className='error' > {eMonth}</p> 
+                        <p className='error' > {eMonth}</p>
                     </div>
                 }
                 {eYear &&
                     <div className='Error-msg'>
                         <img className="icon" src={LogoError} alt='error'></img>
-                        <p className='error' > {eYear}</p> 
+                        <p className='error' > {eYear}</p>
                     </div>
                 }
             </div>
@@ -189,48 +193,48 @@ const Form = (props) => {
                 <label htmlFor="genero">¿Cuál es tu género?</label>
                 <div className='opciones'>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-hombre"  className='radio' name='radio'/>
+                        <input type="radio" id="genero-hombre" className='radio' name='radio' />
                         <label className="label-gener">Hombre</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-mujer"  className='radio' name='radio'/>
+                        <input type="radio" id="genero-mujer" className='radio' name='radio' />
                         <label className="label-gener">Mujer</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-nBinario"  className='radio' name='radio'/>
+                        <input type="radio" id="genero-nBinario" className='radio' name='radio' />
                         <label className="label-gener">No binario</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-otro"  className='radio' name='radio'/>
+                        <input type="radio" id="genero-otro" className='radio' name='radio' />
                         <label className="label-gener">Otro</label>
                     </div>
                     <div className='op-genero'>
-                        <input type="radio" id="genero-no"  className='radio' name='radio'/>
+                        <input type="radio" id="genero-no" className='radio' name='radio' />
                         <label className="label-gener">Prefiero no responder</label>
                     </div>
                 </div>
             </div>
             <div className='input-Ck' >
-                <input type="checkbox" className='ck-box'/>
+                <input type="checkbox" className='ck-box' />
                 <label id='label-Op1'>No quiero recibir mensajes de marketing de Spotify</label>
             </div>
             <div className='input-Ck' id='Op2'>
-                <input type="checkbox" className='ck-box'/>
-                <label id='label-Op2'>Compartir mis datos de registro con los proveedores de 
-                contenidos de Spotify para fines de marketing.</label>
+                <input type="checkbox" className='ck-box' />
+                <label id='label-Op2'>Compartir mis datos de registro con los proveedores de
+                    contenidos de Spotify para fines de marketing.</label>
             </div>
             <div className='input' id='Term-Con'>
                 <div className='term'>
                     <p className='text-term'>
                         Al hacer clic en Registrarte, aceptas
-                        los <a className='link-term' href='https://www.spotify.com/ec/legal/end-user-agreement/'>Términos y condiciones 
-                        de uso</a> de Spotify.
+                        los <a className='link-term' href='https://www.spotify.com/ec/legal/end-user-agreement/'>Términos y condiciones
+                            de uso</a> de Spotify.
                     </p>
                 </div>
                 <div className='term'>
                     <p className='text-term'>
-                        Para obtener más información acerca de cómo Spotify recopila, utiliza, comparte y 
-                        protege tus datos personales, consulta 
+                        Para obtener más información acerca de cómo Spotify recopila, utiliza, comparte y
+                        protege tus datos personales, consulta
                         la <a className='link-term' href='https://www.spotify.com/ec/legal/privacy-policy/'>Política de privacidad</a> de Spotify.
                     </p>
                 </div>
